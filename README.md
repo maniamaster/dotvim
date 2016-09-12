@@ -10,7 +10,11 @@ Install vundle:
 
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-Run :BundleINstall from vim
+    :BundleINstall from vim
+
+in .bashrc:
+
+    TERM=xterm-256color
 
 
 ***enjoy your faviourite editor <3***
