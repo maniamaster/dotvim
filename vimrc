@@ -23,7 +23,8 @@ Plugin 'jnurmine/Zenburn'
 Bundle 'klen/python-mode'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'davidhalter/jedi-vim'
-
+Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+Plugin 'easymotion/vim-easymotion' 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -59,11 +60,12 @@ set splitright
 "my own personalization:"
 "
 let c='a'
-:while c <= 'z'
-: exec "set <A-".c.">=\e".c
-: exec "imap \e".c." <A-".c.">"
-: let c = nr2char(1+char2nr(c))
-:endwhile
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endwhile
+set timeout ttimeoutlen=50
 
 "folding:"
 :setlocal foldmethod=syntax
@@ -104,6 +106,7 @@ endif
 
 set t_Co=256
 colorscheme zenburn
+"SET THIS AFTER WINDOWS CREATOR UPDATE!!!!"
 
 set nu
 
@@ -200,8 +203,9 @@ imap <F12> <c-s>:!make Prohaupt.pdf<CR><CR>
 ""Latex Suite
 "
 ""
+let g:tex_flavor='latex'
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-"  filetype plugin on
+  filetype plugin on
 "  "
 "  " " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 "  " " can be called correctly.
@@ -223,3 +227,8 @@ imap <F12> <c-s>:!make Prohaupt.pdf<CR><CR>
 "   " " The following changes the default filetype back to 'tex':
 "    let g:tex_flavor='latex'
 "
+"
+"EASYMOTION:
+
+map <Leader> <Plug>(easymotion-prefix)
+
